@@ -70,14 +70,12 @@ const Details = () => {
         : "bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50"
       }`}>
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
-        {/* Main Product Card */}
         <div className={`rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm transition-all duration-300 ${theme === "dark"
             ? "bg-slate-900/90 border border-slate-700/50 shadow-purple-900/20"
             : "bg-white/90 border border-gray-100"
           }`}>
           <div className="flex flex-col lg:flex-row">
 
-            {/* Product Image Section */}
             <div className={`lg:w-1/2 p-8 lg:p-12 flex items-center justify-center ${theme === "dark" ? "bg-slate-800/50" : "bg-gray-50/50"
               }`}>
               <div className="relative group">
@@ -93,12 +91,9 @@ const Details = () => {
               </div>
             </div>
 
-            {/* Product Details Section */}
             <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-between">
 
-              {/* Top Content */}
               <div className="space-y-6">
-                {/* Category Badge */}
                 <div className="inline-block">
                   <span className={`px-4 py-2 rounded-full text-sm font-semibold ${theme === "dark"
                       ? "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white"
@@ -108,13 +103,11 @@ const Details = () => {
                   </span>
                 </div>
 
-                {/* Product Title */}
                 <h1 className={`text-4xl lg:text-5xl font-bold leading-tight ${theme === "dark" ? "text-gray-100" : "text-gray-900"
                   }`}>
                   {product.title}
                 </h1>
 
-                {/* Price */}
                 <div className="flex items-baseline gap-3">
                   <span className={`text-5xl font-bold bg-clip-text text-transparent ${theme === "dark"
                       ? "bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
@@ -124,9 +117,7 @@ const Details = () => {
                   </span>
                 </div>
 
-                {/* Product Info Cards */}
                 <div className="grid grid-cols-2 gap-4 pt-4">
-                  {/* Brand Card */}
                   <div className={`p-4 rounded-xl border-2 transition-all duration-300 ${theme === "dark"
                       ? "bg-slate-800/50 border-slate-700 hover:border-purple-500/50"
                       : "bg-gray-50 border-gray-200 hover:border-purple-400"
@@ -141,7 +132,6 @@ const Details = () => {
                     </p>
                   </div>
 
-                  {/* Category Card */}
                   <div className={`p-4 rounded-xl border-2 transition-all duration-300 ${theme === "dark"
                       ? "bg-slate-800/50 border-slate-700 hover:border-purple-500/50"
                       : "bg-gray-50 border-gray-200 hover:border-purple-400"
@@ -157,7 +147,6 @@ const Details = () => {
                   </div>
                 </div>
 
-                {/* Description */}
                 <div className={`p-6 rounded-xl ${theme === "dark"
                     ? "bg-slate-800/30 border border-slate-700/50"
                     : "bg-gray-50/80 border border-gray-200"
@@ -173,7 +162,6 @@ const Details = () => {
                 </div>
               </div>
 
-              {/* Add to Cart Button */}
               <button
                 onClick={() => addToCart(product)}
                 className={`mt-8 w-full py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-3 ${theme === "dark"

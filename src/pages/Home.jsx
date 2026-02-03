@@ -18,12 +18,10 @@ const Home = () => {
         }`}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Page Title */}
         <h1 className={`text-4xl font-bold text-center mb-12 ${mainStyle}`}>
           Welcome to Our Store
         </h1>
 
-        {/* Hero Section */}
         <div
           className={`rounded-2xl border p-12 mb-12 text-center shadow-sm flex justify-center items-center flex-col ${cardStyle}`}
         >
@@ -35,9 +33,7 @@ const Home = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className="grid gap-8 md:grid-cols-3">
-          {/* Feature 1 */}
           <div className={`rounded-2xl border p-8 shadow-sm ${cardStyle}`}>
             <h3 className="text-2xl font-semibold mb-3 flex items-center gap-2"><Zap /> Fast Delivery</h3>
             <p className="text-slate-400 leading-relaxed">
@@ -46,7 +42,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Feature 2 */}
           <div className={`rounded-2xl border p-8 shadow-sm ${cardStyle}`}>
             <h3 className="text-2xl font-semibold mb-3 flex items-center gap-2"><CreditCard /> Secure Payments</h3>
             <p className="text-slate-400 leading-relaxed">
@@ -55,7 +50,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Feature 3 */}
           <div className={`rounded-2xl border p-8 shadow-sm ${cardStyle}`}>
             <h3 className="text-2xl font-semibold mb-3 flex items-center gap-2"><Smartphone /> Mobile Friendly</h3>
             <p className="text-slate-400 leading-relaxed">
@@ -65,7 +59,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Products Highlight */}
         <div
           className={`mt-12 rounded-2xl border p-8 shadow-sm ${cardStyle}`}
         >
@@ -76,7 +69,6 @@ const Home = () => {
           </p>
         </div>
 
-        {/* CTA Footer */}
         <div
           className={`mt-12 rounded-2xl border p-8 text-center shadow-sm flex items-center justify-center flex-col ${cardStyle}`}
         >

@@ -18,14 +18,11 @@ const AboutPage = () => {
         }`}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Page Title */}
         <h1 className={`text-4xl font-bold text-center mb-12 ${mainStyle}`}>
           About Our Store
         </h1>
 
-        {/* Grid */}
         <div className="grid gap-8 md:grid-cols-2">
-          {/* Mission */}
           <div
             className={`rounded-2xl border p-8 shadow-sm ${cardStyle}`}
           >
@@ -39,7 +36,6 @@ const AboutPage = () => {
             </p>
           </div>
 
-          {/* Features */}
           <div
             className={`rounded-2xl border p-8 shadow-sm ${cardStyle}`}
           >
@@ -55,7 +51,6 @@ const AboutPage = () => {
             </ul>
           </div>
 
-          {/* Tech Stack */}
           <div
             className={`rounded-2xl border p-8 shadow-sm ${cardStyle}`}
           >
@@ -82,7 +77,6 @@ const AboutPage = () => {
             </div>
           </div>
 
-          {/* Data Sources */}
           <div
             className={`rounded-2xl border p-8 shadow-sm ${cardStyle}`}
           >
@@ -97,7 +91,6 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* Footer Card */}
         <div
           className={`mt-12 rounded-2xl border p-8 text-center shadow-sm flex flex-col items-center justify-center ${cardStyle}`}
         >

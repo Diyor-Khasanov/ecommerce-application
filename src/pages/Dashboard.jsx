@@ -12,7 +12,6 @@ import {
 const Dashboard = () => {
   const { theme } = useTheme();
 
-  // Statistika ma'lumotlari
   const stats = [
     { id: 1, title: "Total Sales", value: "$45,231", icon: <DollarSign />, change: "+12.5%" },
     { id: 2, title: "Active Users", value: "2,405", icon: <Users />, change: "+3.2%" },
@@ -20,7 +19,6 @@ const Dashboard = () => {
     { id: 4, title: "Pending", value: "43", icon: <Clock />, change: "-2.1%" },
   ];
 
-  // Oxirgi buyurtmalar (Dummy data)
   const recentOrders = [
     { id: "#8821", user: "Ali Valiyev", product: "iPhone 15 Pro", price: "$1200", status: "Completed" },
     { id: "#8822", user: "Zilola G'aniyeva", product: "MacBook Air", price: "$999", status: "Processing" },
@@ -36,7 +34,6 @@ const Dashboard = () => {
     <div className={`min-h-screen transition-colors duration-300 p-6 ${theme === "dark" ? "bg-slate-950 text-white" : "bg-gray-50 text-gray-800"}`}>
       <div className="max-w-7xl mx-auto">
 
-        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
           <div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -49,7 +46,6 @@ const Dashboard = () => {
           </button>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {stats.map((stat) => (
             <div
@@ -74,7 +70,6 @@ const Dashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Recent Orders Table */}
           <div className={`lg:col-span-2 p-6 rounded-2xl border backdrop-blur-md ${theme === 'dark' ? 'bg-slate-900/60 border-slate-700' : 'bg-white border-gray-100 shadow-xl'
             }`}>
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
@@ -113,7 +108,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Quick Analytics Card */}
           <div className={`p-6 rounded-2xl border backdrop-blur-md ${theme === 'dark' ? 'bg-slate-900/60 border-slate-700' : 'bg-white border-gray-100 shadow-xl'
             }`}>
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
@@ -121,7 +115,6 @@ const Dashboard = () => {
             </h2>
             <div className="flex flex-col items-center justify-center py-10">
               <div className="relative w-40 h-40">
-                {/* SVG Progress Circle */}
                 <svg className="w-full h-full transform -rotate-90">
                   <circle cx="80" cy="80" r="70" stroke="currentColor" strokeWidth="10" fill="transparent" className={`${theme === 'dark' ? 'text-slate-800' : 'text-gray-100'}`} />
                   <circle cx="80" cy="80" r="70" stroke="url(#gradient)" strokeWidth="10" fill="transparent" strokeDasharray="440" strokeDashoffset="110" strokeLinecap="round" />
@@ -143,7 +136,6 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

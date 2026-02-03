@@ -8,7 +8,6 @@ const Login = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
 
-  // Admin ma'lumotlari (statik)
   const ADMIN_CREDENTIALS = {
     email: "admin@gmail.com",
     password: "Admin123!"
@@ -23,16 +22,13 @@ const Login = () => {
     onSubmit: (values) => {
       const storedData = sessionStorage.getItem("user");
 
-      // 1. Admin tekshiruvi
       if (values.email === ADMIN_CREDENTIALS.email && values.password === ADMIN_CREDENTIALS.password) {
-        // Admin kirganda storage'ga 'admin' kalitini yozamiz
         sessionStorage.setItem("isAdmin", "true");
         alert("👨‍💻 Admin bo'lib kirdingiz!");
         navigate('/dashboard');
         return;
       }
 
-      // 2. Oddiy user tekshiruvi
       if (storedData) {
         const user = JSON.parse(storedData);
         if (user.email === values.email && user.password === values.password) {
@@ -76,7 +72,6 @@ const Login = () => {
           <button type="submit" className={`w-full py-3 rounded-xl font-bold transition-all active:scale-95 shadow-lg ${theme === 'dark' ? 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-purple-900/40' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-blue-500/30'}`}>Login</button>
         </form>
 
-        {/* Admin Hint Section */}
         <div className={`mt-6 p-4 rounded-xl border border-dashed ${theme === 'dark' ? 'border-slate-700 bg-slate-800/40' : 'border-gray-300 bg-gray-50'}`}>
           <p className={`text-xs font-semibold mb-1 ${theme === 'dark' ? 'text-purple-400' : 'text-blue-600'}`}>💡 Admin Hint:</p>
           <p className={`text-[11px] ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>

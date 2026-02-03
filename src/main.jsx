@@ -1,21 +1,22 @@
-import { StrictMode } from "react";
+import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
-import Home from "./pages/Home.jsx";
-import Cart from "./pages/Cart.jsx";
-import NotFound from "./routes/NotFound.jsx";
-import Products from "./pages/Products.jsx";
-import Details from "./pages/Details.jsx";
-import ThemeProvider from "./context/ThemeProvider.jsx";
-import About from "./pages/About.jsx";
-import Users from "./pages/Users.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import Protected from "./routes/Protected.jsx";
-import Login from "./pages/Login.jsx";
-import Register from "./pages/Register.jsx";
 import { UserProvider } from "./context/UserContext.jsx";
+import ThemeProvider from "./context/ThemeProvider.jsx";
+
+const Home = lazy(() => import('./pages/Home.jsx'))
+const Cart = lazy(() => import('./pages/Cart.jsx'))
+const NotFound = lazy(() => import('./routes/NotFound.jsx'))
+const Products = lazy(() => import('./pages/Products.jsx'))
+const Details = lazy(() => import('./pages/Details.jsx'))
+const About = lazy(() => import('./pages/About.jsx'))
+const Users = lazy(() => import('./pages/Users.jsx'))
+const Dashboard = lazy(() => import('./pages/Dashboard.jsx'))
+const Protected = lazy(() => import('./routes/Protected.jsx'))
+const Login = lazy(() => import('./pages/Login.jsx'))
+const Register = lazy(() => import('./pages/Register.jsx'))
 
 const router = createBrowserRouter([
   {

@@ -39,7 +39,7 @@ const Cart = () => {
   };
 
   const subtotal = cart.reduce((acc, item) => acc + Number(item.price) * item.qty, 0);
-  const shipping = subtotal > 500 ? 0 : 15; // $500 dan oshsa tekin yetkazish
+  const shipping = subtotal > 500 ? 0 : 15;
 
   useEffect(() => {
     getCart();
@@ -68,7 +68,6 @@ const Cart = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-          {/* LEFT — PRODUCTS LIST */}
           <div className="lg:col-span-8 space-y-4">
             {cart.length === 0 ? (
               <div className={`text-center py-20 rounded-3xl border-2 border-dashed ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'}`}>
@@ -78,12 +77,10 @@ const Cart = () => {
               cart.map((item) => (
                 <div key={item.id} className={`group relative p-4 md:p-6 rounded-3xl border backdrop-blur-md transition-all duration-300 hover:shadow-2xl ${cardBg}`}>
                   <div className="flex flex-col sm:flex-row items-center gap-6">
-                    {/* Image */}
                     <div className="relative w-full sm:w-32 h-32 shrink-0 overflow-hidden rounded-2xl bg-slate-100">
                       <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     </div>
 
-                    {/* Info */}
                     <div className="flex-1 text-center sm:text-left">
                       <h3 className="text-lg font-bold mb-1">{item.title}</h3>
                       <p className={`text-sm mb-4 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{item.brand}</p>
@@ -98,7 +95,6 @@ const Cart = () => {
                       </div>
                     </div>
 
-                    {/* Price & Action */}
                     <div className="flex sm:flex-col items-center justify-between sm:justify-center gap-4 w-full sm:w-auto">
                       <div className="text-xl font-black text-blue-500">
                         ${(item.price * item.qty).toLocaleString()}
@@ -113,7 +109,6 @@ const Cart = () => {
             )}
           </div>
 
-          {/* RIGHT — ORDER SUMMARY */}
           <div className="lg:col-span-4">
             <div className={`sticky top-24 p-8 rounded-3xl border shadow-xl ${cardBg}`}>
               <h2 className="text-2xl font-bold mb-8">Order Summary</h2>
@@ -157,7 +152,6 @@ const Cart = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

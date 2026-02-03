@@ -8,7 +8,6 @@ const Register = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
 
-  // O'zbekiston telefon formati: +998 91 123 45 67
   const phoneRegExp = /^\+998\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/;
 
   const validationSchema = Yup.object({
@@ -50,7 +49,6 @@ const Register = () => {
         <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Sign Up</h2>
 
         <form onSubmit={formik.handleSubmit} className="space-y-4">
-          {/* Username */}
           <div>
             <label className={`block text-xs font-medium mb-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Username</label>
             <input
@@ -60,7 +58,6 @@ const Register = () => {
             {formik.touched.username && formik.errors.username && <p className="text-red-400 text-[10px] mt-1 italic">{formik.errors.username}</p>}
           </div>
 
-          {/* Email */}
           <div>
             <label className={`block text-xs font-medium mb-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Email</label>
             <input
@@ -70,7 +67,6 @@ const Register = () => {
             {formik.touched.email && formik.errors.email && <p className="text-red-400 text-[10px] mt-1 italic">{formik.errors.email}</p>}
           </div>
 
-          {/* Phone */}
           <div>
             <label className={`block text-xs font-medium mb-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Phone (+998 91 123 45 67)</label>
             <input
@@ -80,7 +76,6 @@ const Register = () => {
             {formik.touched.phoneNumber && formik.errors.phoneNumber && <p className="text-red-400 text-[10px] mt-1 italic">{formik.errors.phoneNumber}</p>}
           </div>
 
-          {/* Password */}
           <div>
             <label className={`block text-xs font-medium mb-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Password</label>
             <input

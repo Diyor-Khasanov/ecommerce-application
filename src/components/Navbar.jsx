@@ -1,11 +1,11 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { Moon, Sun, LogOut, Menu, X } from "lucide-react"; // Menu va X qo'shildi
+import { Moon, Sun, LogOut, Menu, X } from "lucide-react";
 import { useState } from "react";
 import useTheme from "../context/useTheme";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
-  const [isOpen, setIsOpen] = useState(false); // Mobil menyu holati
+  const [isOpen, setIsOpen] = useState(false);
 
   const userDataStr = sessionStorage.getItem('user');
   const userData = userDataStr ? JSON.parse(userDataStr) : null;
@@ -19,7 +19,6 @@ export default function Navbar() {
     { name: "About", path: '/about' }
   ];
 
-  // Agar admin bo'lsa, Dashboard va Users linklarini qo'shamiz
   if (isAdmin) {
     links.push({ name: "Dashboard", path: '/dashboard' });
     links.push({ name: "Users", path: '/users' });
@@ -40,7 +39,6 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
-          {/* Logo */}
           <div className="flex items-center">
             <NavLink to="/" className="shrink-0 flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
@@ -52,7 +50,6 @@ export default function Navbar() {
             </NavLink>
           </div>
 
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-2">
             {links.map((link) => (
               <NavLink
@@ -65,7 +62,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right Section (Theme & Desktop User) */}
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
@@ -74,7 +70,6 @@ export default function Navbar() {
               {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
 
-            {/* Desktop Auth */}
             <div className="hidden md:flex items-center space-x-3">
               {!userData && !isAdmin ? (
                 <>
@@ -95,7 +90,6 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
               <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-md outline-none">
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -105,7 +99,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}>
         <div className={`px-4 pt-2 pb-6 space-y-2 border-t ${theme === 'dark' ? 'border-slate-800 bg-slate-900' : 'border-gray-100 bg-white'}`}>
           {links.map((link) => (

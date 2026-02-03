@@ -103,17 +103,14 @@ const Products = () => {
     <div className={`min-h-screen transition-colors duration-300 ${theme === "dark" ? "bg-gradient-to-br from-slate-950 via-indigo-950/30 to-slate-950" : "bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50"}`}>
       <div className="max-w-7xl mx-auto px-4 py-8 md:px-8 md:py-12">
 
-        {/* Header Section */}
         <div className="mb-10">
           <h1 className={`text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent`}>
             Discover Products
           </h1>
         </div>
 
-        {/* Search & Filter Section */}
         <div className={`rounded-2xl shadow-2xl p-6 mb-10 backdrop-blur-sm ${theme === "dark" ? "bg-slate-900/80 border border-slate-700/50 shadow-purple-900/20" : "bg-white/80 border border-gray-100"}`}>
           <div className="flex flex-col lg:flex-row gap-4">
-            {/* Search Form */}
             <form
               className="flex-1 flex gap-3 items-center"
               onSubmit={(e) => {
@@ -141,9 +138,7 @@ const Products = () => {
               </button>
             </form>
 
-            {/* Category Filter */}
             <div className="relative lg:w-64">
-              {/* Gradient Border Wrapper */}
               <div className={`p-[2px] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 ${theme === "dark" ? "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" : "bg-gradient-to-r from-blue-500 to-purple-600"}`}>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
@@ -179,21 +174,18 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
           {filteredData.map((product) => (
             <div
               key={product.id}
               className={`group rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${theme === "dark" ? "bg-slate-900/90 border border-slate-700/50 hover:border-purple-500/50 shadow-purple-900/20 hover:shadow-purple-900/40" : "bg-white border border-gray-100"}`}
             >
-              {/* Product Image */}
               <div className="relative overflow-hidden h-56">
                 <img
                   src={product.images[0]}
                   alt={product.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                {/* Category Badge */}
                 <div className="absolute top-3 left-3">
                   <span className={`px-3 py-1 text-xs font-semibold rounded-full shadow-md ${theme === "dark" ? "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white" : "bg-gradient-to-r from-blue-600 to-purple-600 text-white"}`}>
                     {product.category[0].toUpperCase() + product.category.slice(1)}
@@ -201,20 +193,17 @@ const Products = () => {
                 </div>
               </div>
 
-              {/* Product Info */}
               <div className="p-5">
                 <h2 className={`font-bold text-lg mb-2 line-clamp-2 min-h-[56px] ${theme === "dark" ? "text-gray-100" : "text-gray-800"}`}>
                   {product.title}
                 </h2>
 
-                {/* Price */}
                 <div className="mb-4">
                   <span className={`text-3xl font-bold bg-clip-text text-transparent ${theme === "dark" ? "bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400" : "bg-gradient-to-r from-blue-600 to-purple-600"}`}>
                     ${product.price}
                   </span>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex flex-col gap-2">
                   <button
                     onClick={() => navigateToDetails(product.id)}
@@ -238,7 +227,6 @@ const Products = () => {
           ))}
         </div>
 
-        {/* Show More Button */}
         <div className="flex justify-center">
           <button
             onClick={handleShowMore}

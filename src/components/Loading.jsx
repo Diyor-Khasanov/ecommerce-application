@@ -2,30 +2,23 @@ export default function Loading() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-pink-50">
       <div className="text-center">
-        {/* Main Loading Spinner */}
         <div className="relative w-24 h-24 mx-auto mb-8">
-          {/* Outer Ring */}
           <div className="absolute inset-0 border-4 border-blue-200 rounded-full"></div>
 
-          {/* Spinning Gradient Ring */}
           <div className="absolute inset-0 border-4 border-transparent border-t-blue-600 border-r-purple-600 rounded-full animate-spin"></div>
 
-          {/* Inner Pulsing Circle */}
           <div className="absolute inset-3 bg-linear-to-br from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
 
-          {/* Center Dot */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-3 h-3 bg-white rounded-full shadow-lg"></div>
           </div>
         </div>
 
-        {/* Loading Text */}
         <div className="space-y-3">
           <h2 className="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Loading
           </h2>
 
-          {/* Animated Dots */}
           <div className="flex justify-center space-x-2">
             <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
             <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
@@ -43,12 +36,10 @@ export function OrbitingLoader() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="relative w-32 h-32">
-        {/* Center Circle */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-8 h-8 bg-linear-to-br from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
         </div>
 
-        {/* Orbiting Circles */}
         <div className="absolute inset-0 animate-spin">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full"></div>
         </div>
@@ -63,7 +54,6 @@ export function OrbitingLoader() {
   );
 }
 
-// Alternative Loading Spinner 2: Bars
 export function BarsLoader() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-indigo-50 to-purple-50">
@@ -148,7 +138,6 @@ export function CardFlipLoader() {
   );
 }
 
-// Alternative Loading Spinner 5: Dots Wave
 export function DotsWaveLoader() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">

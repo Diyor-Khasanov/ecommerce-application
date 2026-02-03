@@ -49,12 +49,10 @@ const Users = () => {
               key={user.id}
               className={`rounded-xl border p-6 shadow-sm flex items-start gap-4 hover:shadow-md transition ${cardStyle}`}
             >
-              {/* Avatar */}
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg">
                 {user.name.charAt(0)}
               </div>
 
-              {/* User Info */}
               <div>
                 <h2 className="text-lg font-semibold">{user.name}</h2>
                 <p className="text-slate-400 mb-3">@{user.username}</p>
