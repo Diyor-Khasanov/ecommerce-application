@@ -1,4 +1,4 @@
-import { lazy, StrictMode } from "react";
+import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -25,47 +25,85 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: (
+          <Suspense>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <Suspense>
+            <Cart />
+          </Suspense>
+        ),
       },
       {
         path: "/products",
-        element: <Products />,
+        element: (
+          <Suspense>
+            <Products />
+          </Suspense>
+        ),
       },
       {
         path: '/users',
-        element: <Users />
+        element: (
+          <Suspense>
+            <Users />
+          </Suspense>
+        )
       },
       {
         path: "/product/:id",
-        element: <Details />,
+        element: (
+          <Suspense>
+            <Details />
+          </Suspense>
+        ),
       },
       {
         path: '/dashboard',
         element: (
-          <Protected>
-            <Dashboard />
-          </Protected>
+          <Suspense>
+            <Protected>
+              <Dashboard />
+            </Protected>
+          </Suspense>
         )
       },
       {
         path: '/login',
-        element: <Login />
+        element: (
+          <Suspense>
+            <Login />
+          </Suspense>
+        )
       },
       {
         path: '/register',
-        element: <Register />
+        element: (
+          <Suspense>
+            <Register />
+          </Suspense>
+        )
       },
       {
         path: "*",
-        element: <NotFound />,
+        element: (
+          <Suspense>
+            <NotFound />
+          </Suspense>
+        ),
       },
     ],
   },
